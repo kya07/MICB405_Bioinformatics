@@ -28,36 +28,39 @@ STAR \
 --readFilesCommand zcat \
 --outFileNamePrefix /work/alignIntronMax_1000000/D1_LPS/ \ #into newly created, corresponding directory
 --outSAMtype BAM SortedByCoordinate \
---runThreadN 16 \
+--runThreadN 8 \
 --quantMode GeneCounts \
---alignIntronMax 1000000
+--alignIntronMax 1000000 
+
 #D2_LPS (2/8 conditions) 
 STAR \
 --genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
 --readFilesIn D2_LPS_1.fastq.gz D2_LPS_2.fastq.gz \
 --readFilesCommand zcat \
---outFileNamePrefix /work/alignIntronMax_1000000/D2_LPS/ \ 
+--outFileNamePrefix /work/alignIntronMax_1000000/D2_LPS/ \
 --outSAMtype BAM SortedByCoordinate \
---runThreadN 16 \
+--runThreadN 8 \
 --quantMode GeneCounts \
 --alignIntronMax 1000000
+
 #D3_LPS (3/8 conditions) 
 STAR \
 --genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
 --readFilesIn D3_LPS_1.fastq.gz D3_LPS_2.fastq.gz \
 --readFilesCommand zcat \
---outFileNamePrefix /work/alignIntronMax_1000000/D3_LPS/ \ 
+--outFileNamePrefix /work/alignIntronMax_1000000/D3_LPS/ \
 --outSAMtype BAM SortedByCoordinate \
---runThreadN 16 \
+--runThreadN 8 \
 --quantMode GeneCounts \
 --alignIntronMax 1000000
+
 #D4_LPS (4/8 conditions) 
 STAR \
 --genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
 --readFilesIn D4_LPS_1.fastq.gz D4_LPS_2.fastq.gz \
 --readFilesCommand zcat \
---outFileNamePrefix /work/alignIntronMax_1000000/D4_LPS/ \ 
+--outFileNamePrefix /work/alignIntronMax_1000000/D4_LPS/ \
 --outSAMtype BAM SortedByCoordinate \
---runThreadN 16 \
+--runThreadN 8 \
 --quantMode GeneCounts \
 --alignIntronMax 1000000
