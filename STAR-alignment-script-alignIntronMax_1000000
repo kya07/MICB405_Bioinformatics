@@ -21,7 +21,7 @@ done
 mkdir D1_LPS D2_LPS D3_LPS D4_LPS
 mkdir D1_unstim D2_unstim D3_unstim D4_unstim
 
-# D1_LPS (1/8 conditions) 
+#D1_LPS (1/8 conditions) 
 STAR \
 --genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
 --readFilesIn D1_LPS_1.fastq.gz D1_LPS_2.fastq.gz \
@@ -29,10 +29,9 @@ STAR \
 --outFileNamePrefix /work/alignIntronMax_1000000/D1_LPS/ \ #into newly created, corresponding directory
 --outSAMtype BAM SortedByCoordinate \
 --runThreadN 16 \
---quantMode GeneCounts
+--quantMode GeneCounts \
 --alignIntronMax 1000000
-
-# D2_LPS (2/8 conditions) 
+#D2_LPS (2/8 conditions) 
 STAR \
 --genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
 --readFilesIn D2_LPS_1.fastq.gz D2_LPS_2.fastq.gz \
@@ -40,10 +39,9 @@ STAR \
 --outFileNamePrefix /work/alignIntronMax_1000000/D2_LPS/ \ 
 --outSAMtype BAM SortedByCoordinate \
 --runThreadN 16 \
---quantMode GeneCounts
+--quantMode GeneCounts \
 --alignIntronMax 1000000
-
-# D3_LPS (3/8 conditions) 
+#D3_LPS (3/8 conditions) 
 STAR \
 --genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
 --readFilesIn D3_LPS_1.fastq.gz D3_LPS_2.fastq.gz \
@@ -51,10 +49,9 @@ STAR \
 --outFileNamePrefix /work/alignIntronMax_1000000/D3_LPS/ \ 
 --outSAMtype BAM SortedByCoordinate \
 --runThreadN 16 \
---quantMode GeneCounts
+--quantMode GeneCounts \
 --alignIntronMax 1000000
-
-# D4_LPS (4/8 conditions) 
+#D4_LPS (4/8 conditions) 
 STAR \
 --genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
 --readFilesIn D4_LPS_1.fastq.gz D4_LPS_2.fastq.gz \
@@ -62,5 +59,5 @@ STAR \
 --outFileNamePrefix /work/alignIntronMax_1000000/D4_LPS/ \ 
 --outSAMtype BAM SortedByCoordinate \
 --runThreadN 16 \
---quantMode GeneCounts
+--quantMode GeneCounts \
 --alignIntronMax 1000000
