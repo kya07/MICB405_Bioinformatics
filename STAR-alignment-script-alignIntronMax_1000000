@@ -64,3 +64,47 @@ STAR \
 --runThreadN 8 \
 --quantMode GeneCounts \
 --alignIntronMax 1000000
+
+#D1_unstim (5/8 conditions) 
+STAR \
+--genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
+--readFilesIn D1_unstim_1.fastq.gz D1_unstim_2.fastq.gz \
+--readFilesCommand zcat \
+--outFileNamePrefix /work/alignIntronMax_1000000/D1_unstim/ \
+--outSAMtype BAM SortedByCoordinate \
+--runThreadN 8 \
+--quantMode GeneCounts \
+--alignIntronMax 1000000 
+
+#D2_unstim (6/8 conditions) 
+STAR \
+--genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
+--readFilesIn D2_unstim_1.fastq.gz D2_unstim_2.fastq.gz \
+--readFilesCommand zcat \
+--outFileNamePrefix /work/alignIntronMax_1000000/D2_unstim/ \
+--outSAMtype BAM SortedByCoordinate \
+--runThreadN 8 \
+--quantMode GeneCounts \
+--alignIntronMax 1000000
+
+#D3_unstim (7/8 conditions) 
+STAR \
+--genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
+--readFilesIn D3_unstim_1.fastq.gz D3_unstim_2.fastq.gz \
+--readFilesCommand zcat \
+--outFileNamePrefix /work/alignIntronMax_1000000/D3_unstim/ \
+--outSAMtype BAM SortedByCoordinate \
+--runThreadN 8 \
+--quantMode GeneCounts \
+--alignIntronMax 1000000
+
+#D4_unstim (8/8 conditions) 
+STAR \
+--genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
+--readFilesIn D4_unstim_1.fastq.gz D4_unstim_2.fastq.gz \
+--readFilesCommand zcat \
+--outFileNamePrefix /work/alignIntronMax_1000000/D4_unstim/ \
+--outSAMtype BAM SortedByCoordinate \
+--runThreadN 8 \
+--quantMode GeneCounts \
+--alignIntronMax 1000000
