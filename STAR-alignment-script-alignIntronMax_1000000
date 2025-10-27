@@ -1,0 +1,66 @@
+#!/bin/bash
+
+##### Download sequence data ##### 
+# Compress all FASTQ files in the current directory
+for file in *.fastq
+do
+if [ -f "$file" ]; then
+echo "Compressing $file ..."
+gzip "$file"
+fi
+done
+
+###### Preparing an index for STAR ##### 
+# The human reference genome, annotation file, and index using STAR are in the server /datasets/resources/genomes/human
+  # 1.⁠ ⁠The FASTQ file from NCBI: GCF_000001405.40_GRCh38.p14_genomic.fna
+  # 2.⁠ ⁠The annotation file from NCBI: GCF_000001405.40_GRCh38.p14_genomic.gtf
+  # 3.⁠ ⁠The STAR index directory: GRCh38_STAR_index
+
+###### Aligning RNA-seq reads using STAR ##### 
+# Make sample directories for Unstimulated and LPS conditions
+mkdir D1_LPS D2_LPS D3_LPS D4_LPS
+mkdir D1_unstim D2_unstim D3_unstim D4_unstim
+
+# D1_LPS (1/8 conditions) 
+STAR \
+--genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
+--readFilesIn D1_LPS_1.fastq.gz D1_LPS_2.fastq.gz \
+--readFilesCommand zcat \
+--outFileNamePrefix /work/alignIntronMax_1000000/D1_LPS/ \ #into newly created, corresponding directory
+--outSAMtype BAM SortedByCoordinate \
+--runThreadN 16 \
+--quantMode GeneCounts
+--alignIntronMax 1000000
+
+# D2_LPS (2/8 conditions) 
+STAR \
+--genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
+--readFilesIn D2_LPS_1.fastq.gz D2_LPS_2.fastq.gz \
+--readFilesCommand zcat \
+--outFileNamePrefix /work/alignIntronMax_1000000/D2_LPS/ \ 
+--outSAMtype BAM SortedByCoordinate \
+--runThreadN 16 \
+--quantMode GeneCounts
+--alignIntronMax 1000000
+
+# D3_LPS (3/8 conditions) 
+STAR \
+--genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
+--readFilesIn D3_LPS_1.fastq.gz D3_LPS_2.fastq.gz \
+--readFilesCommand zcat \
+--outFileNamePrefix /work/alignIntronMax_1000000/D3_LPS/ \ 
+--outSAMtype BAM SortedByCoordinate \
+--runThreadN 16 \
+--quantMode GeneCounts
+--alignIntronMax 1000000
+
+# D4_LPS (4/8 conditions) 
+STAR \
+--genomeDir /datasets/resources/genomes/human/GRCh38_STAR_index \
+--readFilesIn D4_LPS_1.fastq.gz D4_LPS_2.fastq.gz \
+--readFilesCommand zcat \
+--outFileNamePrefix /work/alignIntronMax_1000000/D4_LPS/ \ 
+--outSAMtype BAM SortedByCoordinate \
+--runThreadN 16 \
+--quantMode GeneCounts
+--alignIntronMax 1000000
