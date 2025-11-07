@@ -122,6 +122,8 @@ dds_matrix$conditions <- relevel(dds_matrix$conditions, ref = "control_unstimula
 
 # Run DESeq2
 dds <- DESeq(dds_matrix)
+# Saving DESeq2 object into an RDS file for easier access next time
+saveRDS(dds, file = "dds.rds") 
 
 # With this dds object, we can perform a wide variety of interesting analyses.
 
@@ -186,7 +188,8 @@ dim(res_filtered) # Look at how many rows you filtered out!
 
 # Pull genes with more than 2x higher/lower expression
 res_filtered_final <- res_filtered |>
-  filter(log2FoldChange <= -1 | log2FoldChange >= 1)
+  filter(log2FoldChange <= -1 | log2FoldChange >= 1) |> 
+  rownames_to_column("gene_id") # Convert the rownames into a column so they can be saved in your CSV file
 # The '|' stands for OR here!
 head(res_filtered_final)
 dim(res_filtered_final)
