@@ -7,3 +7,8 @@ all upregulated genes: https://biit.cs.ut.ee/gplink/l/avDCVWZ-YQa
 
 upregulated genes log2FC > 5: https://biit.cs.ut.ee/gplink/l/avklqzfOSTO
 downregulated genes log2FC < -5: https://biit.cs.ut.ee/gplink/l/aBW4Wjj0eSv
+
+upregulated genes log2FC > 2: https://biit.cs.ut.ee/gplink/l/ahAFCSwS2Sp
+downregulated genes log2FC < -2: https://biit.cs.ut.ee/gplink/l/aBW4Wjj0eSv
+
+
