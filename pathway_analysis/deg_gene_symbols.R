@@ -6,12 +6,12 @@ sig_res <- results %>%
   filter(padj < 0.05)
 
 up_regulated <- sig_res %>%
-  filter(log2FoldChange > 0) %>%
-  pull(X)
+  filter(log2FoldChange > 2) %>%
+  pull(gene_id)
 
 down_regulated <- sig_res %>%
-  filter(log2FoldChange < 0) %>%
-  pull(X)
+  filter(log2FoldChange < -2) %>%
+  pull(gene_id)
 
 write(paste(up_regulated, collapse = " "), file = "all_upregulated_genes.txt")
 write(paste(down_regulated, collapse = " "), file = "all_downregulated_genes.txt")
