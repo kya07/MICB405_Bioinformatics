@@ -45,11 +45,15 @@ plot_deg_per_pathway <- function(gost_res, output, pathway, dds) {
     Z,
     cluster_cols = TRUE,
     cluster_rows = TRUE,
-    show_rownames = TRUE,
+    show_rownames = FALSE,
     fontsize = 9,
     color = colorRampPalette(c("blue", "white", "red"))(200),
     filename=output,
-    main=name
+    main=name,
+    width=6,
+    height=8,
+    fontsize_row=12,
+    fontsize_col = 12
   )
 }
 
@@ -105,4 +109,10 @@ for(pathway in select_downregulated_pathways) {
   plot_deg_per_pathway(down_gost_res, output, pathway, dds)
 }
 
-  
+pathway <- "regulation of macromolecule metabolic process"
+output <- paste0("pathway_analysis/heatmap_dge_up_", gsub(" ", "_", pathway), ".png")
+plot_deg_per_pathway(up_gost_res, output, pathway, dds)
+
+pathway <- "oxidative phosphorylation"
+output <- paste0("pathway_analysis/heatmap_dge_down_", gsub(" ", "_", pathway), ".png")
+plot_deg_per_pathway(down_gost_res, output, pathway, dds)
